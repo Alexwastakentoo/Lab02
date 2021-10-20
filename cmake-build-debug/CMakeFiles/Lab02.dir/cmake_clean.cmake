@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Lab02.dir/main.c.obj"
+  "CMakeFiles/Lab02.dir/ex01.c.obj"
   "CMakeFiles/Lab02.dir/matrixFn.c.obj"
   "Lab02.exe"
   "Lab02.exe.manifest"

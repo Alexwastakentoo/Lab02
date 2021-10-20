@@ -64,16 +64,6 @@ CMAKE_BINARY_DIR = C:\Users\skyle\CLionProjects\Lab02\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -83,6 +73,16 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -116,48 +116,85 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Lab02
+# Target rules for targets named Lab02_ex01
 
 # Build rule for target.
-Lab02: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Lab02
-.PHONY : Lab02
+Lab02_ex01: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Lab02_ex01
+.PHONY : Lab02_ex01
 
 # fast build rule for target.
-Lab02/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02.dir\build.make CMakeFiles/Lab02.dir/build
-.PHONY : Lab02/fast
+Lab02_ex01/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex01.dir\build.make CMakeFiles/Lab02_ex01.dir/build
+.PHONY : Lab02_ex01/fast
 
-main.obj: main.c.obj
-.PHONY : main.obj
+#=============================================================================
+# Target rules for targets named Lab02_ex02
+
+# Build rule for target.
+Lab02_ex02: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Lab02_ex02
+.PHONY : Lab02_ex02
+
+# fast build rule for target.
+Lab02_ex02/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex02.dir\build.make CMakeFiles/Lab02_ex02.dir/build
+.PHONY : Lab02_ex02/fast
+
+ex01.obj: ex01.c.obj
+.PHONY : ex01.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02.dir\build.make CMakeFiles/Lab02.dir/main.c.obj
-.PHONY : main.c.obj
+ex01.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex01.dir\build.make CMakeFiles/Lab02_ex01.dir/ex01.c.obj
+.PHONY : ex01.c.obj
 
-main.i: main.c.i
-.PHONY : main.i
+ex01.i: ex01.c.i
+.PHONY : ex01.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02.dir\build.make CMakeFiles/Lab02.dir/main.c.i
-.PHONY : main.c.i
+ex01.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex01.dir\build.make CMakeFiles/Lab02_ex01.dir/ex01.c.i
+.PHONY : ex01.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+ex01.s: ex01.c.s
+.PHONY : ex01.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02.dir\build.make CMakeFiles/Lab02.dir/main.c.s
-.PHONY : main.c.s
+ex01.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex01.dir\build.make CMakeFiles/Lab02_ex01.dir/ex01.c.s
+.PHONY : ex01.c.s
+
+ex02/ex02.obj: ex02/ex02.c.obj
+.PHONY : ex02/ex02.obj
+
+# target to build an object file
+ex02/ex02.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex02.dir\build.make CMakeFiles/Lab02_ex02.dir/ex02/ex02.c.obj
+.PHONY : ex02/ex02.c.obj
+
+ex02/ex02.i: ex02/ex02.c.i
+.PHONY : ex02/ex02.i
+
+# target to preprocess a source file
+ex02/ex02.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex02.dir\build.make CMakeFiles/Lab02_ex02.dir/ex02/ex02.c.i
+.PHONY : ex02/ex02.c.i
+
+ex02/ex02.s: ex02/ex02.c.s
+.PHONY : ex02/ex02.s
+
+# target to generate assembly for a file
+ex02/ex02.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex02.dir\build.make CMakeFiles/Lab02_ex02.dir/ex02/ex02.c.s
+.PHONY : ex02/ex02.c.s
 
 matrixFn.obj: matrixFn.c.obj
 .PHONY : matrixFn.obj
 
 # target to build an object file
 matrixFn.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02.dir\build.make CMakeFiles/Lab02.dir/matrixFn.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex01.dir\build.make CMakeFiles/Lab02_ex01.dir/matrixFn.c.obj
 .PHONY : matrixFn.c.obj
 
 matrixFn.i: matrixFn.c.i
@@ -165,7 +202,7 @@ matrixFn.i: matrixFn.c.i
 
 # target to preprocess a source file
 matrixFn.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02.dir\build.make CMakeFiles/Lab02.dir/matrixFn.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex01.dir\build.make CMakeFiles/Lab02_ex01.dir/matrixFn.c.i
 .PHONY : matrixFn.c.i
 
 matrixFn.s: matrixFn.c.s
@@ -173,7 +210,7 @@ matrixFn.s: matrixFn.c.s
 
 # target to generate assembly for a file
 matrixFn.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02.dir\build.make CMakeFiles/Lab02.dir/matrixFn.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex01.dir\build.make CMakeFiles/Lab02_ex01.dir/matrixFn.c.s
 .PHONY : matrixFn.c.s
 
 # Help Target
@@ -184,10 +221,14 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Lab02
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... Lab02_ex01
+	@echo ... Lab02_ex02
+	@echo ... ex01.obj
+	@echo ... ex01.i
+	@echo ... ex01.s
+	@echo ... ex02/ex02.obj
+	@echo ... ex02/ex02.i
+	@echo ... ex02/ex02.s
 	@echo ... matrixFn.obj
 	@echo ... matrixFn.i
 	@echo ... matrixFn.s

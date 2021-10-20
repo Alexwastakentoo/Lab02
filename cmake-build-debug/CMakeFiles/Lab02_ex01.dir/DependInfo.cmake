@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/skyle/CLionProjects/Lab02/ex01.c" "C:/Users/skyle/CLionProjects/Lab02/cmake-build-debug/CMakeFiles/Lab02.dir/ex01.c.obj"
-  "C:/Users/skyle/CLionProjects/Lab02/matrixFn.c" "C:/Users/skyle/CLionProjects/Lab02/cmake-build-debug/CMakeFiles/Lab02.dir/matrixFn.c.obj"
+  "C:/Users/skyle/CLionProjects/Lab02/ex01.c" "C:/Users/skyle/CLionProjects/Lab02/cmake-build-debug/CMakeFiles/Lab02_ex01.dir/ex01.c.obj"
+  "C:/Users/skyle/CLionProjects/Lab02/matrixFn.c" "C:/Users/skyle/CLionProjects/Lab02/cmake-build-debug/CMakeFiles/Lab02_ex01.dir/matrixFn.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

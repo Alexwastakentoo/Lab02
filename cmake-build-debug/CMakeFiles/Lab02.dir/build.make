@@ -65,18 +65,18 @@ include CMakeFiles/Lab02.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Lab02.dir/flags.make
 
-CMakeFiles/Lab02.dir/main.c.obj: CMakeFiles/Lab02.dir/flags.make
-CMakeFiles/Lab02.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\skyle\CLionProjects\Lab02\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Lab02.dir/main.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Lab02.dir\main.c.obj -c C:\Users\skyle\CLionProjects\Lab02\main.c
+CMakeFiles/Lab02.dir/ex01.c.obj: CMakeFiles/Lab02.dir/flags.make
+CMakeFiles/Lab02.dir/ex01.c.obj: ../ex01.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\skyle\CLionProjects\Lab02\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Lab02.dir/ex01.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Lab02.dir\ex01.c.obj -c C:\Users\skyle\CLionProjects\Lab02\ex01.c
 
-CMakeFiles/Lab02.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lab02.dir/main.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\skyle\CLionProjects\Lab02\main.c > CMakeFiles\Lab02.dir\main.c.i
+CMakeFiles/Lab02.dir/ex01.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lab02.dir/ex01.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\skyle\CLionProjects\Lab02\ex01.c > CMakeFiles\Lab02.dir\ex01.c.i
 
-CMakeFiles/Lab02.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lab02.dir/main.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\skyle\CLionProjects\Lab02\main.c -o CMakeFiles\Lab02.dir\main.c.s
+CMakeFiles/Lab02.dir/ex01.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lab02.dir/ex01.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\skyle\CLionProjects\Lab02\ex01.c -o CMakeFiles\Lab02.dir\ex01.c.s
 
 CMakeFiles/Lab02.dir/matrixFn.c.obj: CMakeFiles/Lab02.dir/flags.make
 CMakeFiles/Lab02.dir/matrixFn.c.obj: ../matrixFn.c
@@ -93,13 +93,13 @@ CMakeFiles/Lab02.dir/matrixFn.c.s: cmake_force
 
 # Object files for target Lab02
 Lab02_OBJECTS = \
-"CMakeFiles/Lab02.dir/main.c.obj" \
+"CMakeFiles/Lab02.dir/ex01.c.obj" \
 "CMakeFiles/Lab02.dir/matrixFn.c.obj"
 
 # External object files for target Lab02
 Lab02_EXTERNAL_OBJECTS =
 
-Lab02.exe: CMakeFiles/Lab02.dir/main.c.obj
+Lab02.exe: CMakeFiles/Lab02.dir/ex01.c.obj
 Lab02.exe: CMakeFiles/Lab02.dir/matrixFn.c.obj
 Lab02.exe: CMakeFiles/Lab02.dir/build.make
 Lab02.exe: CMakeFiles/Lab02.dir/linklibs.rsp

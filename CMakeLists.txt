@@ -3,4 +3,5 @@ project(Lab02 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(Lab02 main.c matrixFn.c)
+add_executable(Lab02_ex01 ex01.c matrixFn.c)
+add_executable(Lab02_ex02 cmake-build-debug/ex02/ex02.c)
