@@ -110,11 +110,11 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/skyle/CLionProjects/Lab02/cmake-build-debug/ex02/ex02.c">
-			<Option target="Lab02_ex02"/>
-		</Unit>
 		<Unit filename="C:/Users/skyle/CLionProjects/Lab02/ex01.c">
 			<Option target="Lab02_ex01"/>
+		</Unit>
+		<Unit filename="C:/Users/skyle/CLionProjects/Lab02/ex02/ex02.c">
+			<Option target="Lab02_ex02"/>
 		</Unit>
 		<Unit filename="C:/Users/skyle/CLionProjects/Lab02/matrixFn.c">
 			<Option target="Lab02_ex01"/>

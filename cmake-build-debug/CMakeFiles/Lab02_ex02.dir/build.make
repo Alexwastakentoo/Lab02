@@ -66,17 +66,17 @@ include CMakeFiles/Lab02_ex02.dir/progress.make
 include CMakeFiles/Lab02_ex02.dir/flags.make
 
 CMakeFiles/Lab02_ex02.dir/ex02/ex02.c.obj: CMakeFiles/Lab02_ex02.dir/flags.make
-CMakeFiles/Lab02_ex02.dir/ex02/ex02.c.obj: ex02/ex02.c
+CMakeFiles/Lab02_ex02.dir/ex02/ex02.c.obj: ../ex02/ex02.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\skyle\CLionProjects\Lab02\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Lab02_ex02.dir/ex02/ex02.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Lab02_ex02.dir\ex02\ex02.c.obj -c C:\Users\skyle\CLionProjects\Lab02\cmake-build-debug\ex02\ex02.c
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Lab02_ex02.dir\ex02\ex02.c.obj -c C:\Users\skyle\CLionProjects\Lab02\ex02\ex02.c
 
 CMakeFiles/Lab02_ex02.dir/ex02/ex02.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lab02_ex02.dir/ex02/ex02.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\skyle\CLionProjects\Lab02\cmake-build-debug\ex02\ex02.c > CMakeFiles\Lab02_ex02.dir\ex02\ex02.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\skyle\CLionProjects\Lab02\ex02\ex02.c > CMakeFiles\Lab02_ex02.dir\ex02\ex02.c.i
 
 CMakeFiles/Lab02_ex02.dir/ex02/ex02.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lab02_ex02.dir/ex02/ex02.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\skyle\CLionProjects\Lab02\cmake-build-debug\ex02\ex02.c -o CMakeFiles\Lab02_ex02.dir\ex02\ex02.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\skyle\CLionProjects\Lab02\ex02\ex02.c -o CMakeFiles\Lab02_ex02.dir\ex02\ex02.c.s
 
 # Object files for target Lab02_ex02
 Lab02_ex02_OBJECTS = \
