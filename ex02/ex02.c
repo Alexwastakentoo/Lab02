@@ -4,12 +4,12 @@
 #include <stdio.h>
 
 
-#define MAX_LINE_SIZE 100
+#define MAX_LINE_SIZE 100 + 1
 #define SEQ_SIZE 5
 
 int main(){
 
-    char  linebuffer[MAX_LINE_SIZE + 1];
+    char  linebuffer[MAX_LINE_SIZE];
     int hLine = 0, hLineCount = 0;
     int vLine[MAX_LINE_SIZE] = {0}, vLineCount = 0;
 
@@ -21,16 +21,20 @@ int main(){
         // horizontal h line checking
         if((linebuffer[i] == 'h') && (hLine < 5) && (i <= MAX_LINE_SIZE - SEQ_SIZE)){ // check if the element is an 'h' if so increment the counter
             hLine++;
-        } else if(linebuffer[i] != 'h' && hLine == 5){ // if the element is not an 'h' then increment the line counter iff hLine is big enough
+        } else if(linebuffer[i] != 'h'){ // if the element is not an 'h' then increment the line counter iff hLine is big enough
+            if(hLine == 5){
+                hLineCount++;
+            }
             hLine = 0; // reset hLine
-            hLineCount++;
         }
 
         // vertical v line checking
         if(linebuffer[i] == 'v' && vLine[i] < 5){ // check if the element is a 'v' if so we need to mark the index to check it in the next line
             vLine[i]++;
-           } else if(linebuffer[i] != 'v' && vLine[i] == 5){
-            vLineCount++;
+           } else if(linebuffer[i] != 'v'){
+               if(vLine[i] == 5) {
+                  vLineCount++;
+               }
             vLine[i] = 0;
            }
         }
