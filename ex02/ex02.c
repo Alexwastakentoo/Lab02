@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 
-#define MAX_LINE_SIZE 11 + 1
+#define MAX_LINE_SIZE 100 + 2
 #define SEQ_SIZE 5
 
 int main(){
