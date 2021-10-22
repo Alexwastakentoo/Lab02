@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 
-#define MAX_LINE_SIZE 10 + 1
+#define MAX_LINE_SIZE 11 + 1
 #define SEQ_SIZE 5
 
 int main(){
@@ -20,10 +20,8 @@ int main(){
         // horizontal h line checking
         printf("%c", linebuffer[i]);
         fflush(stdout);
-        if((linebuffer[i] == 'h') && (i <= MAX_LINE_SIZE - SEQ_SIZE)){ // check if the element is an 'h' if so increment the counter
-            if((hLine < 5)){
+        if((linebuffer[i] == 'h') && (i <= MAX_LINE_SIZE - SEQ_SIZE) && (hLine < 5)){ // check if the element is an 'h' if so increment the counter
                 hLine++;
-            }
         } else if(linebuffer[i] != 'h'){ // if the element is not an 'h' then increment the line counter iff hLine is big enough
             if(hLine == 5){
                 hLineCount++;
