@@ -16,7 +16,7 @@ int main(){
     FILE *inputFile = fopen("input_lab02_ex02.txt", "r"); // open input file
 
     while(fgets(linebuffer, MAX_LINE_SIZE, inputFile) != NULL){ // read line by line, fgets returns NULL when no new line available
-        for(int i = 0; i < MAX_LINE_SIZE; i++){
+        for(int i = 0; linebuffer[i] != '\0'; i++){
         // horizontal h line checking
         printf("%c", linebuffer[i]);
         fflush(stdout);
@@ -32,12 +32,13 @@ int main(){
         // vertical v line checking
         if(linebuffer[i] == 'v' && vLine[i] < 5){ // check if the element is a 'v' if so we need to mark the index to check it in the next line
             vLine[i]++;
-           } else if(linebuffer[i] != 'v'){
-               if(vLine[i] == 5) {
-                  vLineCount++;
-               }
+           } else if(linebuffer[i] != 'v' ){
             vLine[i] = 0;
            }
+            if(vLine[i] == 5) {
+                vLineCount++;
+                vLine[i] = 0;
+            }
         }
     }
     fclose(inputFile);
