@@ -3,7 +3,6 @@
 //
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #define ERR_WRONG_INPUT -1
@@ -13,7 +12,7 @@
 
 int main(int argc, char *argv[]){
 
-    char linebuffer[MAX_LINE_SIZE], string1[MAX_STRING_SIZE], string2[MAX_STRING_SIZE], marker[MAX_LINE_SIZE] = {0};
+    char linebuffer[MAX_LINE_SIZE], marker[MAX_LINE_SIZE] = {0};
     int stringFound, str1Len;
 
 
@@ -47,8 +46,9 @@ int main(int argc, char *argv[]){
     //read file line by line
 
     stringFound = 0;
-    str1Len = strlen(string1);
+    str1Len = (int) strlen(argv[1]);
 
+    printf("\n");
     printf("Input file:\n");
     while(fgets(linebuffer, MAX_LINE_SIZE, inputFile) != NULL){
         // print the input file to console
@@ -57,10 +57,10 @@ int main(int argc, char *argv[]){
         // loop through the buffered line until the string we're searching can't be found
         for(int i = 0;(i < MAX_LINE_SIZE - str1Len); i++){
             // check if the string is present when the first element of it is found in the buffer
-            if(linebuffer[i] == string1[0]){
+            if(linebuffer[i] == argv[1][0]){
                 // loop through both to check if we have a match
                 for(int j = 0; j < str1Len; j++){
-                    if(linebuffer[i + j] == string1[j]){
+                    if(linebuffer[i + j] == argv[1][j]){
                         stringFound++;
                         // on last iteration if the string is present we enter this if and mark the index for later
                         if(stringFound == str1Len) {
@@ -74,7 +74,7 @@ int main(int argc, char *argv[]){
             // check if the internal loop has marked the index, if so replace the elements in the buffer with the string2
             if(marker[i] == 1){
                 for(int k = 0; k < str1Len; k++){
-                    linebuffer[i+k] = string2[k];
+                    linebuffer[i+k] = argv[3][k];
                 }
             }
         }
