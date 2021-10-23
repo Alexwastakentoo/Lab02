@@ -1,4 +1,5 @@
 C:/Users/skyle/CLionProjects/Lab02/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 C:/Users/skyle/CLionProjects/Lab02/cmake-build-debug/CMakeFiles/Lab02_ex01.dir
 C:/Users/skyle/CLionProjects/Lab02/cmake-build-debug/CMakeFiles/Lab02_ex02.dir
+C:/Users/skyle/CLionProjects/Lab02/cmake-build-debug/CMakeFiles/Lab02_ex03.dir
 C:/Users/skyle/CLionProjects/Lab02/cmake-build-debug/CMakeFiles/edit_cache.dir

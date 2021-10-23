@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 
+#define ERR_FIL_NAM -1
 
 #define MAX_LINE_SIZE 100 + 2
 #define SEQ_SIZE 5
@@ -14,6 +15,11 @@ int main(){
     int vLine[MAX_LINE_SIZE] = {0}, vLineCount = 0;
 
     FILE *inputFile = fopen("input_lab02_ex02.txt", "r"); // open input file
+
+    if(inputFile == NULL){
+        fprintf(stderr,"Error invalid file name");
+        return ERR_FIL_NAM;
+    }
 
     while(fgets(linebuffer, MAX_LINE_SIZE, inputFile) != NULL){ // read line by line, fgets returns NULL when no new line available
         for(int i = 0; linebuffer[i] != '\0'; i++){

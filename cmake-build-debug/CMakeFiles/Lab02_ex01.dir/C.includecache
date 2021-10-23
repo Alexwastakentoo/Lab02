@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/skyle/CLionProjects/Lab02/ex01.c
-stdio.h
--
-stdlib.h
--
-matrixFn.h
-C:/Users/skyle/CLionProjects/Lab02/matrixFn.h
-
 C:/Users/skyle/CLionProjects/Lab02/matrixFn.c
 matrixFn.h
 C:/Users/skyle/CLionProjects/Lab02/matrixFn.h

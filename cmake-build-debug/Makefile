@@ -141,6 +141,19 @@ Lab02_ex02/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex02.dir\build.make CMakeFiles/Lab02_ex02.dir/build
 .PHONY : Lab02_ex02/fast
 
+#=============================================================================
+# Target rules for targets named Lab02_ex03
+
+# Build rule for target.
+Lab02_ex03: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Lab02_ex03
+.PHONY : Lab02_ex03
+
+# fast build rule for target.
+Lab02_ex03/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex03.dir\build.make CMakeFiles/Lab02_ex03.dir/build
+.PHONY : Lab02_ex03/fast
+
 ex01.obj: ex01.c.obj
 .PHONY : ex01.obj
 
@@ -189,6 +202,30 @@ ex02/ex02.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex02.dir\build.make CMakeFiles/Lab02_ex02.dir/ex02/ex02.c.s
 .PHONY : ex02/ex02.c.s
 
+ex03/ex03.obj: ex03/ex03.c.obj
+.PHONY : ex03/ex03.obj
+
+# target to build an object file
+ex03/ex03.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex03.dir\build.make CMakeFiles/Lab02_ex03.dir/ex03/ex03.c.obj
+.PHONY : ex03/ex03.c.obj
+
+ex03/ex03.i: ex03/ex03.c.i
+.PHONY : ex03/ex03.i
+
+# target to preprocess a source file
+ex03/ex03.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex03.dir\build.make CMakeFiles/Lab02_ex03.dir/ex03/ex03.c.i
+.PHONY : ex03/ex03.c.i
+
+ex03/ex03.s: ex03/ex03.c.s
+.PHONY : ex03/ex03.s
+
+# target to generate assembly for a file
+ex03/ex03.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lab02_ex03.dir\build.make CMakeFiles/Lab02_ex03.dir/ex03/ex03.c.s
+.PHONY : ex03/ex03.c.s
+
 matrixFn.obj: matrixFn.c.obj
 .PHONY : matrixFn.obj
 
@@ -223,12 +260,16 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Lab02_ex01
 	@echo ... Lab02_ex02
+	@echo ... Lab02_ex03
 	@echo ... ex01.obj
 	@echo ... ex01.i
 	@echo ... ex01.s
 	@echo ... ex02/ex02.obj
 	@echo ... ex02/ex02.i
 	@echo ... ex02/ex02.s
+	@echo ... ex03/ex03.obj
+	@echo ... ex03/ex03.i
+	@echo ... ex03/ex03.s
 	@echo ... matrixFn.obj
 	@echo ... matrixFn.i
 	@echo ... matrixFn.s

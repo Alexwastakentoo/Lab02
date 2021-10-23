@@ -6,37 +6,37 @@
 
 int main() {
 
-    float ** m1 = NULL, ** m2 = NULL, ** m3 = NULL;
-    int * dim_row1 = NULL, * dim_clm1 = NULL, * dim_row2 = NULL, * dim_clm2 = NULL;
+    float * m1 = NULL, * m2 = NULL, * m3 = NULL;
+    int dim_row1, dim_clm1, dim_row2, dim_clm2;
 
 
     printf("Input matrix 1 dimensions (rxc): ");
-    readDim(dim_row1, dim_clm1);
+    readDim(&dim_row1, &dim_clm1);
 
-    if (*dim_clm1 == -1) {
+    if (dim_clm1 == -1) {
         return ERR_WRONG_INPUT;
     }
 
     printf("Input matrix 2 dimensions (rxc): ");
-    readDim(dim_row2, dim_clm2);
+    readDim(&dim_row2, &dim_clm2);
 
-    if (*dim_clm2 == -1) {
+    if (dim_clm2 == -1) {
         return ERR_WRONG_INPUT;
     }
 
-    if(checkDim(*dim_clm1, *dim_row2) == 0){
+    if(checkDim(dim_clm1, dim_row2) == 0){
         fprintf(stderr,"Error the two matrices are not compatible\n");
         return ERR_MATRICES_NOT_COMPATIBLE;
     }
 
-    m1 = (float **) realloc(m1, (*dim_clm1 * *dim_row1) * sizeof(float));
+    m1 = (float *) realloc(m1, (dim_clm1 * dim_row1) * sizeof(float));
     if(m1 == NULL){
         fprintf(stderr, "Error allocating memory");
         free(m1);
         return ERR_NO_MEM;
     }
 
-    m2 = (float **) realloc(m2, (*dim_clm2 * *dim_row2) * sizeof(float));
+    m2 = (float *) realloc(m2, (dim_clm2 * dim_row2) * sizeof(float));
     if(m2 == NULL){
         fprintf(stderr, "Error allocating memory");
         free(m2);
@@ -48,7 +48,7 @@ int main() {
         return ERR_NO_MEM;
     }
 
-    m3 = (float **) realloc(m3, (*dim_clm2 * *dim_row1) * sizeof(float));
+    m3 = (float *) realloc(m3, (dim_clm2 * dim_row1) * sizeof(float));
     if(m3 == NULL){
         fprintf(stderr, "Error allocating memory");
         free(m3);
@@ -66,20 +66,21 @@ int main() {
     }
 
 
-    readMatrix(m1, *dim_row1, *dim_clm1);
-    readMatrix(m2, *dim_row2, *dim_clm2);
+    readMatrix(m1, dim_row1, dim_clm1);
+    readMatrix(m2, dim_row2, dim_clm2);
 
 
-    matrixProduct(m3, m1, *dim_row1, m2, *dim_clm2, *dim_clm1);
+    matrixProduct(m3, m1, dim_row1, m2, dim_clm2, dim_clm1);
 
     printf("_-_-_-[Matrix 1]-_-_-_\n");
-    printMatrix(m1, *dim_row1, *dim_clm1);
+    printMatrix(m1, dim_row1, dim_clm1);
 
     printf("_-_-_-[Matrix 2]-_-_-_\n");
-    printMatrix(m1, *dim_row2, *dim_clm2);
+    printMatrix(m1, dim_row2, dim_clm2);
 
     printf("_-_-_-[Matrix 3]-_-_-_\n");
-    printMatrix(m1, *dim_row1, *dim_clm2);
-        return 0;
+    printMatrix(m1, dim_row1, dim_clm2);
 
+
+    return 0;
 }

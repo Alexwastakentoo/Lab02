@@ -31,14 +31,14 @@ int checkDim( int clm_dim1, int row_dim2){
 }
 
 
-void readMatrix(float **matrix,int row_dim, int clm_dim){
+void readMatrix(float *matrix,int row_dim, int clm_dim){
 
     int newRow = 0, value_r = 0, value_c = 0;
 
     for (int j = 0; j < row_dim * clm_dim; j++) {
-        setbuf(stdout, 0);
         printf("Input row %d column %d of the matrix: ", value_r, value_c);
-        scanf("%f", matrix[j]); // ???
+        fflush(stdout);
+        scanf("%f", &matrix[j]);
 
         if(newRow == clm_dim - 1){
             value_r++;
@@ -56,13 +56,13 @@ void readMatrix(float **matrix,int row_dim, int clm_dim){
 
 
 
-void matrixProduct(float **result, float **matrix1, int row_dim1, float **matrix2, int clm_dim2, int clm1_or_row2_dim){
+void matrixProduct(float *result, const float *matrix1, int row_dim1, const float *matrix2, int clm_dim2, int clm1_or_row2_dim){
 
 // multiplication of matrices
     for(int i = 0; i < row_dim1; i++){
         for(int j = 0; j < clm_dim2; j++){
             for(int k = 0; k < clm1_or_row2_dim; k++){
-                *result[(i * clm_dim2) + j] += *matrix1[(i * clm1_or_row2_dim) + k] * *matrix2[(k * clm_dim2) + j];
+                result[(i * clm_dim2) + j] += matrix1[(i * clm1_or_row2_dim) + k] * matrix2[(k * clm_dim2) + j];
             }
         }
     }
@@ -70,7 +70,7 @@ void matrixProduct(float **result, float **matrix1, int row_dim1, float **matrix
 
 
 
-void printMatrix(float **matrix, int row_dim, int clm_dim){
+void printMatrix(float *matrix, int row_dim, int clm_dim){
     int newRow = 0;
     for(int i = 0; i < row_dim * clm_dim; i++){
         if(newRow == clm_dim){
@@ -78,7 +78,7 @@ void printMatrix(float **matrix, int row_dim, int clm_dim){
             newRow = 0;
         }
 
-        printf("%f", *matrix[i]);
+        printf("| %f |", matrix[i]);
         newRow++;
     }
     printf("\n");
