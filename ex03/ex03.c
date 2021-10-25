@@ -13,7 +13,7 @@
 int main(int argc, char *argv[]){
 
     char linebuffer[MAX_LINE_SIZE], string1[MAX_STRING_SIZE], string2[MAX_STRING_SIZE], marker[MAX_LINE_SIZE] = {0}, *token = NULL,
-    newline[MAX_LINE_SIZE] = {'\0'}, tokenDelim[MAX_STRING_SIZE] = {'\0'};
+    newline[MAX_LINE_SIZE] = {'\0'}, tokenDelim[MAX_STRING_SIZE] = {'\0'}, linebuffercpy[MAX_LINE_SIZE];
     int stringFound, str1Len, str2Len;
 
 
@@ -81,7 +81,8 @@ int main(int argc, char *argv[]){
             str2Len = (int)   strlen(string2);
             strcpy(tokenDelim, string1);
             tokenDelim[str1Len] = linebuffer[i+str1Len];
-            token = strtok(linebuffer, tokenDelim);
+            strcpy(linebuffercpy, linebuffer);
+            token = strtok(linebuffercpy, tokenDelim);
             printf("\n token: %s  \n tokenDelim: %s", token, tokenDelim);
             fflush(stdout);
             newline[0] = linebuffer[i+str1Len];
@@ -89,7 +90,6 @@ int main(int argc, char *argv[]){
 
             for(int k = 0; newline[k] != 0; k++){
                 linebuffer[(i+str1Len) + (k+1)] = newline[k];
-                k++;
             }
 
             token = NULL;
