@@ -1,7 +1,7 @@
+Regression file.
 
 This file is to check the program.
 
-In the previous check we should have a substitution (testWa substitution (testheck ).
+In the previous line we should have a substitution (checkWITHcheck ).
 
-Here we should neck ).
-ave it: t-e-s-t.
+Here we should not have it: t-e-s-t.
