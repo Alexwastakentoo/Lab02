@@ -12,9 +12,9 @@
 
 int main(int argc, char *argv[]){
 
-    char linebuffer[MAX_LINE_SIZE], string1[MAX_STRING_SIZE], string2[MAX_STRING_SIZE], marker[MAX_LINE_SIZE] = {0}, *token = NULL,
-    newline[MAX_LINE_SIZE] = {'\0'}, tokenDelim[MAX_STRING_SIZE] = {'\0'}, linebuffercpy[MAX_LINE_SIZE];
-    int stringFound, str1Len, str2Len;
+    char linebuffer[MAX_LINE_SIZE], string1[MAX_STRING_SIZE], string2[MAX_STRING_SIZE], string2cpy[MAX_STRING_SIZE],
+         marker[MAX_LINE_SIZE] = {0}, linebuffercpy_left[MAX_LINE_SIZE] = {'\0'}, linebuffercpy_right[MAX_LINE_SIZE];
+    int stringFound, str1Len;
 
 
     // check if argc == 1 (file name) + n° elements passed, in this case 5
@@ -78,31 +78,28 @@ int main(int argc, char *argv[]){
 
 
             // check if the internal loop has marked the index, if so replace the elements in the buffer with the string2
-            str2Len = (int)   strlen(string2);
-            strcpy(tokenDelim, string1);
-            tokenDelim[str1Len] = linebuffer[i+str1Len];
-            strcpy(linebuffercpy, linebuffer);
-            token = strtok(linebuffercpy, tokenDelim);
-            printf("\n token: %s  \n tokenDelim: %s", token, tokenDelim);
-            fflush(stdout);
-            newline[0] = linebuffer[i+str1Len];
-            strcat(newline, token);
-
-            for(int k = 0; newline[k] != 0; k++){
-                linebuffer[(i+str1Len) + (k+1)] = newline[k];
-            }
-
-            token = NULL;
 
             if(marker[i] == 1){
-                for(int l = 0; l < str2Len; l++){
-                    linebuffer[i+l] = string2[l];
-                }
+                // make a copy of string 2 to use later in strcat
+                // strncpy doesn't add \0 terminator, we need to add it ourselves
+                strcpy(string2cpy, string2);
+                string2cpy[MAX_STRING_SIZE - 1] = '\0';
+                // copy "left part" of linebuffer
+                strncpy(linebuffercpy_left, linebuffer, i);
+                linebuffercpy_left[i] = '\0';
+                // copy "right part" of linebuffer
+                strncpy(linebuffercpy_right, &linebuffer[i+str1Len], MAX_LINE_SIZE - i);
+                // concatenate all the pieces together --> left + string2cpy + right
+                strcat(linebuffercpy_left, strcat(string2cpy, linebuffercpy_right));
+                // copy final result into linebuffer to iterate again to look for other matches on the same line
+                strcpy(linebuffer, linebuffercpy_left);
+
             }
+
         }
 
         // after reading everything and possibly replacing print into the output file the linebuffer
-        fprintf(outputFile,"%s\n" ,linebuffer);
+        fprintf(outputFile,"%s\n" ,linebuffercpy_left);
 
     }
     fclose(inputFile);
